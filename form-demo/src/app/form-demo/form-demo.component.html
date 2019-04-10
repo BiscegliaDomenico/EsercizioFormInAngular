@@ -20,10 +20,31 @@
    <div *ngIf="myForm.controls['sku'].hasError('required')"
          class="alert alert-danger">SKU is required
    </div>
+
+    <div class="form-group">
+     <label for="priceInput">PRICE</label>
+     <input type="number"
+           id="priceInput"
+           placeholder="PRICE"
+           name="price"
+           [formControl]="myForm.controls['price']"
+           class="form-control">
+ </div>
+ <div *ngIf="!myForm.controls['price'].valid"
+         class="alert alert-danger">PRICE is invalid
+   </div>
+   <div *ngIf="myForm.controls['price'].hasError('required')"
+         class="alert alert-danger">PRICE is required
+   </div>
+
    <button type="submit" class="btn btn-primary">Submit</button>
  </form>
 
  <div *ngIf="!myForm.valid"
  class="alert alert-danger">Form is invalid</div>
+
+
 </div>
+
+
 

@@ -37,6 +37,22 @@
          class="alert alert-danger">PRICE is required
    </div>
 
+   <div class="form-group">
+     <label for="mailInput">MAIL</label>
+     <input type="email"
+           id="mailInput"
+           placeholder="MAIL"
+           name="mail"
+           [formControl]="myForm.controls['mail']"
+           class="form-control">
+ </div>
+ <div *ngIf="!myForm.controls['mail'].valid"
+         class="alert alert-danger">MAIL is invalid
+   </div>
+   <div *ngIf="myForm.controls['mail'].hasError('required')"
+         class="alert alert-danger">MAIL is required
+   </div>
+
    <button type="submit" class="btn btn-primary">Submit</button>
  </form>
 
